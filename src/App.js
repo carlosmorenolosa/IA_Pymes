@@ -2,7 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
-import { Check, MessageSquare, Cpu, BarChart, Users, MonitorSmartphone } from "lucide-react";
+import {
+  Check,
+  MessageSquare,
+  Cpu,
+  BarChart,
+  Users,
+  MonitorSmartphone,
+} from "lucide-react";
+
+// Importa tu componente del chatbot
+import InterfazGraficaPymerIA from "./chatbot_pymeria";
 
 export default function IABusinessWebsite() {
   return (
@@ -33,13 +43,27 @@ function Navbar() {
           IA4PYMEs
         </motion.h1>
         <nav className="hidden space-x-4 md:block">
-          <a href="#home" className="hover:text-indigo-600">Inicio</a>
-          <a href="#about" className="hover:text-indigo-600">Sobre Nosotros</a>
-          <a href="#services" className="hover:text-indigo-600">Soluciones</a>
-          <a href="#chatbot" className="hover:text-indigo-600">Chatbot IA</a>
-          <a href="#success-stories" className="hover:text-indigo-600">Casos de Éxito</a>
-          <a href="#blog" className="hover:text-indigo-600">Blog</a>
-          <a href="#contact" className="hover:text-indigo-600">Contacto</a>
+          <a href="#home" className="hover:text-indigo-600">
+            Inicio
+          </a>
+          <a href="#about" className="hover:text-indigo-600">
+            Sobre Nosotros
+          </a>
+          <a href="#services" className="hover:text-indigo-600">
+            Soluciones
+          </a>
+          <a href="#chatbot" className="hover:text-indigo-600">
+            Chatbot IA
+          </a>
+          <a href="#success-stories" className="hover:text-indigo-600">
+            Casos de Éxito
+          </a>
+          <a href="#blog" className="hover:text-indigo-600">
+            Blog
+          </a>
+          <a href="#contact" className="hover:text-indigo-600">
+            Contacto
+          </a>
         </nav>
       </div>
     </header>
@@ -48,7 +72,10 @@ function Navbar() {
 
 function HomeSection() {
   return (
-    <section id="home" className="flex items-center justify-center bg-gray-50 py-16 px-4">
+    <section
+      id="home"
+      className="flex items-center justify-center bg-gray-50 py-16 px-4"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +87,8 @@ function HomeSection() {
           Optimiza tu negocio con IA: Soluciones inteligentes para PYMEs.
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-gray-600">
-          Descubre cómo la inteligencia artificial puede transformar tu empresa y potenciar tu crecimiento.
+          Descubre cómo la inteligencia artificial puede transformar tu empresa y
+          potenciar tu crecimiento.
         </p>
         <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
           Agenda una consulta gratuita
@@ -97,15 +125,20 @@ function AboutSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Sobre Nosotros</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Sobre Nosotros
+        </h2>
         <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
-          Nuestra misión es proporcionar soluciones de Inteligencia Artificial accesibles y personalizadas para
-          ayudar a las PYMEs a crecer. Nos diferenciamos por ofrecer una total personalización de nuestras
-          herramientas, integrándolas sin grandes cambios en tu infraestructura y brindando soporte continuo.
+          Nuestra misión es proporcionar soluciones de Inteligencia Artificial
+          accesibles y personalizadas para ayudar a las PYMEs a crecer. Nos
+          diferenciamos por ofrecer una total personalización de nuestras
+          herramientas, integrándolas sin grandes cambios en tu infraestructura y
+          brindando soporte continuo.
         </p>
         <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">
-          Nuestra visión es capacitar a los negocios para que aprovechen todo el potencial de la IA y sigan siendo
-          competitivos en un mercado en constante evolución.
+          Nuestra visión es capacitar a los negocios para que aprovechen todo el
+          potencial de la IA y sigan siendo competitivos en un mercado en
+          constante evolución.
         </p>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
           <TeamMember
@@ -159,7 +192,9 @@ function ServicesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Soluciones y Servicios</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Soluciones y Servicios
+        </h2>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
           <ServiceCard
             title="Automatización de Procesos"
@@ -199,6 +234,7 @@ function ServiceCard({ title, description, icon }) {
   );
 }
 
+// SECCIÓN DONDE INCRUSTAMOS EL CHATBOT
 function ChatbotSection() {
   return (
     <section id="chatbot" className="bg-white py-16 px-4">
@@ -207,22 +243,33 @@ function ChatbotSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="container mx-auto max-w-5xl text-center"
+        className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-3xl font-bold text-indigo-600">Chatbot IA</h2>
-        <p className="mx-auto mb-8 max-w-2xl text-gray-700">
-          Nuestro chatbot ayuda a gestionar consultas, capturar leads y mejorar la experiencia del cliente.
-          Disponible 24/7, aprende de cada interacción y reduce la carga de trabajo en atención al cliente.
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Chatbot IA
+        </h2>
+        <p className="mx-auto mb-8 max-w-2xl text-center text-gray-700">
+          Nuestro chatbot ayuda a gestionar consultas, capturar leads y mejorar la
+          experiencia del cliente. Disponible 24/7, aprende de cada interacción y
+          reduce la carga de trabajo en atención al cliente.
         </p>
-        <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
-          Prueba nuestro chatbot gratis
-        </Button>
-        <div className="mt-10">
+        {/* CTA y iFrame de demo como ejemplo */}
+        <div className="text-center">
+          <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
+            Prueba nuestro chatbot gratis
+          </Button>
+        </div>
+        <div className="mt-10 flex flex-col items-center justify-center space-y-6">
+          {/* iFrame de demo (opcional) */}
           <iframe
             title="Chatbot Demo"
             src="https://example.com/chatbot-demo"
             className="mx-auto h-80 w-full max-w-xl rounded-2xl shadow-md"
           />
+          {/* COMPONENTE DEL CHATBOT REAL */}
+          <div className="w-full max-w-xl">
+            <InterfazGraficaPymerIA />
+          </div>
         </div>
       </motion.div>
     </section>
@@ -231,7 +278,10 @@ function ChatbotSection() {
 
 function SuccessStoriesSection() {
   return (
-    <section id="success-stories" className="bg-gray-50 py-16 px-4">
+    <section
+      id="success-stories"
+      className="bg-gray-50 py-16 px-4"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +289,9 @@ function SuccessStoriesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Casos de Éxito</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Casos de Éxito
+        </h2>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
           <Testimonial
             name="Empresa XYZ"
@@ -262,8 +314,12 @@ function Testimonial({ name, before, after }) {
     <Card className="rounded-2xl shadow-md">
       <CardContent className="p-6">
         <h4 className="mb-2 text-xl font-semibold text-gray-800">{name}</h4>
-        <p className="mb-2 text-sm text-gray-500"><strong>Antes:</strong> {before}</p>
-        <p className="text-sm text-gray-500"><strong>Después:</strong> {after}</p>
+        <p className="mb-2 text-sm text-gray-500">
+          <strong>Antes:</strong> {before}
+        </p>
+        <p className="text-sm text-gray-500">
+          <strong>Después:</strong> {after}
+        </p>
       </CardContent>
     </Card>
   );
@@ -279,7 +335,9 @@ function BlogResourcesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Blog / Recursos</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Blog / Recursos
+        </h2>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
           <ResourceCard
             title="Guía: IA en el Sector Retail"
@@ -320,9 +378,12 @@ function ContactSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Contacto / Solicita una Demo</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+          Contacto / Solicita una Demo
+        </h2>
         <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
-          ¿Listo para llevar tu negocio al siguiente nivel? Rellena el formulario para ponerte en contacto con nosotros.
+          ¿Listo para llevar tu negocio al siguiente nivel? Rellena el formulario
+          para ponerte en contacto con nosotros.
         </p>
         <div className="mx-auto mt-8 max-w-xl">
           <form className="grid grid-cols-1 gap-4">
@@ -356,12 +417,20 @@ function ContactSection() {
           </form>
         </div>
         <div className="mt-10 flex flex-col items-center space-y-4 text-center">
-          <p className="text-gray-700">WhatsApp y chat en vivo disponible para preguntas rápidas</p>
+          <p className="text-gray-700">
+            WhatsApp y chat en vivo disponible para preguntas rápidas
+          </p>
           <p className="text-gray-700">Dirección: Calle Ejemplo 123, Ciudad, País</p>
           <div className="flex space-x-4">
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">Facebook</a>
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">Twitter</a>
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">LinkedIn</a>
+            <a href="#" className="text-indigo-600 hover:text-indigo-400">
+              Facebook
+            </a>
+            <a href="#" className="text-indigo-600 hover:text-indigo-400">
+              Twitter
+            </a>
+            <a href="#" className="text-indigo-600 hover:text-indigo-400">
+              LinkedIn
+            </a>
           </div>
         </div>
       </motion.div>
