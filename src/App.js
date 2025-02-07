@@ -23,7 +23,6 @@ export default function IABusinessWebsite() {
       <ServicesSection />
       <ChatbotSection />
       <SuccessStoriesSection />
-      <BlogResourcesSection />
       <ContactSection />
       <Footer />
     </div>
@@ -58,9 +57,6 @@ function Navbar() {
           <a href="#success-stories" className="hover:text-indigo-600">
             Casos de Éxito
           </a>
-          <a href="#blog" className="hover:text-indigo-600">
-            Blog
-          </a>
           <a href="#contact" className="hover:text-indigo-600">
             Contacto
           </a>
@@ -90,9 +86,11 @@ function HomeSection() {
           Descubre cómo la inteligencia artificial puede transformar tu empresa y
           potenciar tu crecimiento.
         </p>
-        <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
-          Agenda una consulta gratuita
-        </Button>
+        <a href="#contact">
+          <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
+            Agenda una consulta gratuita
+          </Button>
+        </a>
         <div className="mt-12 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 md:grid-cols-4">
           <BenefitCard icon={<Cpu className="h-8 w-8" />} title="Automatización de procesos" />
           <BenefitCard icon={<BarChart className="h-8 w-8" />} title="Optimización de costos" />
@@ -253,19 +251,7 @@ function ChatbotSection() {
           experiencia del cliente. Disponible 24/7, aprende de cada interacción y
           reduce la carga de trabajo en atención al cliente.
         </p>
-        {/* CTA y iFrame de demo como ejemplo */}
-        <div className="text-center">
-          <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
-            Prueba nuestro chatbot gratis
-          </Button>
-        </div>
         <div className="mt-10 flex flex-col items-center justify-center space-y-6">
-          {/* iFrame de demo (opcional) */}
-          <iframe
-            title="Chatbot Demo"
-            src="https://example.com/chatbot-demo"
-            className="mx-auto h-80 w-full max-w-xl rounded-2xl shadow-md"
-          />
           {/* COMPONENTE DEL CHATBOT REAL */}
           <div className="w-full max-w-xl">
             <InterfazGraficaPymerIA />
@@ -278,10 +264,7 @@ function ChatbotSection() {
 
 function SuccessStoriesSection() {
   return (
-    <section
-      id="success-stories"
-      className="bg-gray-50 py-16 px-4"
-    >
+    <section id="success-stories" className="bg-gray-50 py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -320,49 +303,6 @@ function Testimonial({ name, before, after }) {
         <p className="text-sm text-gray-500">
           <strong>Después:</strong> {after}
         </p>
-      </CardContent>
-    </Card>
-  );
-}
-
-function BlogResourcesSection() {
-  return (
-    <section id="blog" className="bg-white py-16 px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="container mx-auto max-w-5xl"
-      >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
-          Blog / Recursos
-        </h2>
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-          <ResourceCard
-            title="Guía: IA en el Sector Retail"
-            description="Aprende cómo la IA puede mejorar la experiencia de compra para tus clientes."
-          />
-          <ResourceCard
-            title="Caso de Estudio: Empresa de Logística"
-            description="Descubre cómo optimizamos rutas y entregas con algoritmos de IA."
-          />
-          <ResourceCard
-            title="Webinar: Introducción a la IA"
-            description="Regístrate a nuestra próxima sesión formativa gratuita sobre IA para PYMEs."
-          />
-        </div>
-      </motion.div>
-    </section>
-  );
-}
-
-function ResourceCard({ title, description }) {
-  return (
-    <Card className="rounded-2xl shadow-md">
-      <CardContent className="p-6">
-        <h3 className="mb-2 text-xl font-semibold text-gray-800">{title}</h3>
-        <p className="text-gray-600">{description}</p>
       </CardContent>
     </Card>
   );
