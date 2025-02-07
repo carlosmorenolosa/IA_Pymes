@@ -147,12 +147,12 @@ function AboutSection() {
           <TeamMember
             name="Alejandro Picallo"
             role="Co-Fundador / CTO"
-            imageUrl="https://via.placeholder.com/200"
+            imageUrl="/images/picallo.jpg"
           />
           <TeamMember
             name="Pablo Fora"
             role="Líder de Desarrollo"
-            imageUrl="https://via.placeholder.com/200"
+            imageUrl="/images/pablo.jpg"
           />
         </div>
       </motion.div>
