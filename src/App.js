@@ -277,14 +277,19 @@ function SuccessStoriesSection() {
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
           <Testimonial
-            name="Empresa XYZ"
-            before="Procesos manuales y lentos"
-            after="Reducción de 40% en tareas repetitivas y mejora en la satisfacción del cliente"
+            name="Hospital de Toledo"
+            before="Falta de personalización en los tratamientos de dermatología y procesos manuales que ralentizaban la atención al paciente."
+            after="Implementación de un modelo de IA que generó tratamientos personalizados, reduciendo tiempos de espera y mejorando la calidad de los tratamientos dermatológicos."
           />
           <Testimonial
-            name="Startup ABC"
-            before="Dificultad para gestionar consultas masivas"
-            after="Chatbot 24/7 que atendió un 60% más de leads de forma autónoma"
+            name="Puerto Marítimo de Alicante"
+            before="Frecuentes daños en los contenedores durante las operaciones de carga y descarga, generando costos adicionales en reparaciones y reclamaciones."
+            after="Desarrollo de un modelo de machine learning que predice daños antes de que ocurran, reduciendo costos de reparación y optimizando los tiempos de operación."
+          />
+          <Testimonial
+            name="Puerto Marítimo de Alicante"
+            before="Dificultad para identificar daños en los contenedores al entrar o salir de la terminal, lo que generaba reclamaciones y costos adicionales de reparación."
+            after="Desarrollo de un modelo de visión artificial que detecta automáticamente los daños en los contenedores mediante imágenes, notificando a la empresa propietaria y evitando disputas y costos de reparación."
           />
         </div>
       </motion.div>
