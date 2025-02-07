@@ -9,11 +9,15 @@ import {
   BarChart,
   Users,
   MonitorSmartphone,
+  CheckCircle,
 } from "lucide-react";
 
 // Importa tu componente del chatbot
 import InterfazGraficaPymerIA from "./chatbot_pymeria";
 
+// ---------------------------------------
+// 1. Componente principal
+// ---------------------------------------
 export default function IABusinessWebsite() {
   return (
     <div className="font-sans text-gray-800">
@@ -29,6 +33,9 @@ export default function IABusinessWebsite() {
   );
 }
 
+// ---------------------------------------
+// 2. Navbar
+// ---------------------------------------
 function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -66,6 +73,9 @@ function Navbar() {
   );
 }
 
+// ---------------------------------------
+// 3. Sección de Inicio (HomeSection)
+// ---------------------------------------
 function HomeSection() {
   return (
     <section
@@ -102,6 +112,9 @@ function HomeSection() {
   );
 }
 
+// ---------------------------------------
+// 4. Tarjeta (BenefitCard) para la HomeSection
+// ---------------------------------------
 function BenefitCard({ icon, title }) {
   return (
     <Card className="rounded-2xl shadow-md">
@@ -113,6 +126,9 @@ function BenefitCard({ icon, title }) {
   );
 }
 
+// ---------------------------------------
+// 5. Sección 'Sobre Nosotros' (AboutSection)
+// ---------------------------------------
 function AboutSection() {
   return (
     <section id="about" className="bg-white py-16 px-4">
@@ -160,6 +176,9 @@ function AboutSection() {
   );
 }
 
+// ---------------------------------------
+// 6. Componente individual para cada miembro (TeamMember)
+// ---------------------------------------
 function TeamMember({ name, role, imageUrl }) {
   return (
     <motion.div
@@ -180,6 +199,9 @@ function TeamMember({ name, role, imageUrl }) {
   );
 }
 
+// ---------------------------------------
+// 7. Sección 'Servicios' (ServicesSection)
+// ---------------------------------------
 function ServicesSection() {
   return (
     <section id="services" className="bg-gray-50 py-16 px-4">
@@ -220,6 +242,9 @@ function ServicesSection() {
   );
 }
 
+// ---------------------------------------
+// 8. Tarjeta (ServiceCard) para la sección 'Servicios'
+// ---------------------------------------
 function ServiceCard({ title, description, icon }) {
   return (
     <Card className="rounded-2xl shadow-md">
@@ -232,7 +257,9 @@ function ServiceCard({ title, description, icon }) {
   );
 }
 
-// SECCIÓN DONDE INCRUSTAMOS EL CHATBOT
+// ---------------------------------------
+// 9. Sección 'Chatbot'
+// ---------------------------------------
 function ChatbotSection() {
   return (
     <section id="chatbot" className="bg-white py-16 px-4">
@@ -262,7 +289,30 @@ function ChatbotSection() {
   );
 }
 
+// ---------------------------------------
+// 10. Sección de Casos de Éxito
+//    --> Versión minimalista sin botón
+// ---------------------------------------
 function SuccessStoriesSection() {
+  // Datos resumidos de casos de éxito
+  const successStories = [
+    {
+      name: "Hospital de Toledo",
+      summary:
+        "IA para tratamientos dermatológicos personalizados. Redujo tiempos y mejoró la calidad en atención.",
+    },
+    {
+      name: "Puerto Marítimo de Alicante (ML)",
+      summary:
+        "Modelo para predecir daños en contenedores, ahorrando costes y tiempos de reparación.",
+    },
+    {
+      name: "Puerto Marítimo de Alicante (Visión)",
+      summary:
+        "Visión artificial para detectar contenedores dañados y notificar automáticamente a propietarios.",
+    },
+  ];
+
   return (
     <section id="success-stories" className="bg-gray-50 py-16 px-4">
       <motion.div
@@ -275,44 +325,40 @@ function SuccessStoriesSection() {
         <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
           Casos de Éxito
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <Testimonial
-            name="Hospital de Toledo"
-            before="Falta de personalización en los tratamientos de dermatología y procesos manuales que ralentizaban la atención al paciente."
-            after="Implementación de un modelo de IA que generó tratamientos personalizados, reduciendo tiempos de espera y mejorando la calidad de los tratamientos dermatológicos."
-          />
-          <Testimonial
-            name="Puerto Marítimo de Alicante"
-            before="Frecuentes daños en los contenedores durante las operaciones de carga y descarga, generando costos adicionales en reparaciones y reclamaciones."
-            after="Desarrollo de un modelo de machine learning que predice daños antes de que ocurran, reduciendo costos de reparación y optimizando los tiempos de operación."
-          />
-          <Testimonial
-            name="Puerto Marítimo de Alicante"
-            before="Dificultad para identificar daños en los contenedores al entrar o salir de la terminal, lo que generaba reclamaciones y costos adicionales de reparación."
-            after="Desarrollo de un modelo de visión artificial que detecta automáticamente los daños en los contenedores mediante imágenes, notificando a la empresa propietaria y evitando disputas y costos de reparación."
-          />
+        <div className="mx-auto mt-10 grid gap-6 md:grid-cols-3">
+          {successStories.map((story, i) => (
+            <SuccessStoryCard
+              key={i}
+              name={story.name}
+              summary={story.summary}
+            />
+          ))}
         </div>
       </motion.div>
     </section>
   );
 }
 
-function Testimonial({ name, before, after }) {
+// ---------------------------------------
+// 11. Tarjeta minimalista para cada Caso de Éxito
+//     --> Sin botón de "Ver más"
+// ---------------------------------------
+function SuccessStoryCard({ name, summary }) {
   return (
-    <Card className="rounded-2xl shadow-md">
-      <CardContent className="p-6">
-        <h4 className="mb-2 text-xl font-semibold text-gray-800">{name}</h4>
-        <p className="mb-2 text-sm text-gray-500">
-          <strong>Antes:</strong> {before}
-        </p>
-        <p className="text-sm text-gray-500">
-          <strong>Después:</strong> {after}
-        </p>
-      </CardContent>
-    </Card>
+    <div className="relative flex flex-col items-start justify-between rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
+      {/* Icono de logro en la esquina */}
+      <div className="absolute right-4 top-4 text-green-500">
+        <CheckCircle className="h-8 w-8" />
+      </div>
+      <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
+      <p className="mb-2 text-sm text-gray-600">{summary}</p>
+    </div>
   );
 }
 
+// ---------------------------------------
+// 12. Sección de Contacto
+// ---------------------------------------
 function ContactSection() {
   return (
     <section id="contact" className="bg-gray-50 py-16 px-4">
@@ -362,9 +408,7 @@ function ContactSection() {
           </form>
         </div>
         <div className="mt-10 flex flex-col items-center space-y-4 text-center">
-          <p className="text-gray-700">
-            ia4pymes@gmail.com
-          </p>
+          <p className="text-gray-700">ia4pymes@gmail.com</p>
           <div className="flex space-x-4">
             <a href="#" className="text-indigo-600 hover:text-indigo-400">
               Facebook
@@ -382,6 +426,9 @@ function ContactSection() {
   );
 }
 
+// ---------------------------------------
+// 13. Footer
+// ---------------------------------------
 function Footer() {
   return (
     <footer className="bg-white py-4 text-center text-sm text-gray-600">
