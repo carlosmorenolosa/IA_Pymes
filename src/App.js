@@ -297,17 +297,17 @@ function SuccessStoriesSection() {
   // Datos resumidos de casos de éxito
   const successStories = [
     {
-      name: "Hospital de Toledo",
+      name: "Hospital de Toledo (IA Generativa)",
       summary:
         "IA para tratamientos dermatológicos personalizados. Redujo tiempos y mejoró la calidad en atención.",
     },
     {
-      name: "Puerto Marítimo de Alicante (ML)",
+      name: "Puerto Marítimo de Alicante (Machine Learning)",
       summary:
         "Modelo para predecir daños en contenedores, ahorrando costes y tiempos de reparación.",
     },
     {
-      name: "Puerto Marítimo de Alicante (Visión)",
+      name: "Puerto Marítimo de Alicante (Visión Artificial)",
       summary:
         "Visión artificial para detectar contenedores dañados y notificar automáticamente a propietarios.",
     },
@@ -345,9 +345,10 @@ function SuccessStoriesSection() {
 // ---------------------------------------
 function SuccessStoryCard({ name, summary }) {
   return (
-    <div className="relative flex flex-col items-start justify-between rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
-      {/* Icono de logro en la esquina */}
-      <div className="absolute right-4 top-4 text-green-500">
+    <div className="relative flex flex-col items-start justify-between
+                    rounded-2xl bg-white px-6 py-8 shadow-md
+                    transition-transform duration-300 hover:-translate-y-1">
+      <div className="absolute right-4 top-4 text-green-500 z-10">
         <CheckCircle className="h-8 w-8" />
       </div>
       <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
