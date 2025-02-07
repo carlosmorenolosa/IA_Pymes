@@ -358,9 +358,8 @@ function ContactSection() {
         </div>
         <div className="mt-10 flex flex-col items-center space-y-4 text-center">
           <p className="text-gray-700">
-            WhatsApp y chat en vivo disponible para preguntas rápidas
+            ia4pymes@gmail.com
           </p>
-          <p className="text-gray-700">Dirección: Calle Ejemplo 123, Ciudad, País</p>
           <div className="flex space-x-4">
             <a href="#" className="text-indigo-600 hover:text-indigo-400">
               Facebook
