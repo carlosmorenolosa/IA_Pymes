@@ -142,7 +142,7 @@ function AboutSection() {
           <TeamMember
             name="Carlos Moreno"
             role="Co-Fundador / CEO"
-            imageUrl="https://via.placeholder.com/200"
+            imageUrl="/images/carlos-moreno.jpeg"
           />
           <TeamMember
             name="Alejandro Picallo"
