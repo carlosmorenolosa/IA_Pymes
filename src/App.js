@@ -389,7 +389,7 @@ function ContactSection() {
 
     try {
       const response = await fetch(
-        "https://3jcx6fnigf.execute-api.eu-west-1.amazonaws.com/prod",
+        "https://3jcx6fnigf.execute-api.eu-west-1.amazonaws.com/prod/send-email",
         {
           method: "POST",
           headers: {
