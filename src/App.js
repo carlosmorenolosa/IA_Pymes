@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
@@ -292,10 +292,8 @@ function ChatbotSection() {
 
 // ---------------------------------------
 // 10. Sección de Casos de Éxito
-//    --> Versión minimalista sin botón
 // ---------------------------------------
 function SuccessStoriesSection() {
-  // Datos resumidos de casos de éxito
   const successStories = [
     {
       name: "Hospital de Toledo (IA Generativa)",
@@ -342,13 +340,14 @@ function SuccessStoriesSection() {
 
 // ---------------------------------------
 // 11. Tarjeta minimalista para cada Caso de Éxito
-//     --> Sin botón de "Ver más"
 // ---------------------------------------
 function SuccessStoryCard({ name, summary }) {
   return (
-    <div className="relative flex flex-col items-start justify-between
+    <div
+      className="relative flex flex-col items-start justify-between
                     rounded-2xl bg-white px-6 py-8 shadow-md
-                    transition-transform duration-300 hover:-translate-y-1">
+                    transition-transform duration-300 hover:-translate-y-1"
+    >
       <div className="absolute right-4 top-4 text-green-500 z-10">
         <CheckCircle className="h-8 w-8" />
       </div>
@@ -362,6 +361,66 @@ function SuccessStoryCard({ name, summary }) {
 // 12. Sección de Contacto
 // ---------------------------------------
 function ContactSection() {
+  // Estados para los datos del formulario, el envío y el mensaje de respuesta
+  const [formData, setFormData] = useState({
+    nombre: "",
+    empresa: "",
+    email: "",
+    mensaje: "",
+    demo: false,
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  // Manejador de cambios en los inputs
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  // Manejador del envío del formulario
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setResponseMessage("");
+
+    try {
+      const response = await fetch(
+        "https://3jcx6fnigf.execute-api.eu-west-1.amazonaws.com/prod",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // Envía los datos del formulario en formato JSON
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+      if (response.ok) {
+        setResponseMessage("Correo enviado exitosamente.");
+        // Reiniciamos el formulario
+        setFormData({
+          nombre: "",
+          empresa: "",
+          email: "",
+          mensaje: "",
+          demo: false,
+        });
+      } else {
+        setResponseMessage("Error al enviar el correo.");
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      setResponseMessage("Error al enviar el correo.");
+    }
+    setIsSending(false);
+  };
+
   return (
     <section id="contact" className="bg-gray-50 py-16 px-4">
       <motion.div
@@ -379,35 +438,63 @@ function ContactSection() {
           para ponerte en contacto con nosotros.
         </p>
         <div className="mx-auto mt-8 max-w-xl">
-          <form className="grid grid-cols-1 gap-4">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
             <input
               type="text"
+              name="nombre"
               placeholder="Nombre"
+              value={formData.nombre}
+              onChange={handleChange}
               className="rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
             <input
               type="text"
+              name="empresa"
               placeholder="Empresa"
+              value={formData.empresa}
+              onChange={handleChange}
               className="rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               className="rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
             <textarea
+              name="mensaje"
               placeholder="Mensaje"
               rows={4}
+              value={formData.mensaje}
+              onChange={handleChange}
               className="rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
             <label className="flex items-center space-x-2">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                name="demo"
+                checked={formData.demo}
+                onChange={handleChange}
+              />
               <span>Solicitar una demostración de IA</span>
             </label>
-            <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
-              Enviar
+            <Button
+              type="submit"
+              disabled={isSending}
+              className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500"
+            >
+              {isSending ? "Enviando..." : "Enviar"}
             </Button>
           </form>
+          {responseMessage && (
+            <p className="mt-4 text-center text-gray-700">{responseMessage}</p>
+          )}
         </div>
         <div className="mt-10 flex flex-col items-center space-y-4 text-center">
           <p className="text-gray-700">ia4pymes@gmail.com</p>
