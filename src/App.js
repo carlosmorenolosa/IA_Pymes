@@ -157,17 +157,17 @@ function AboutSection() {
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
           <TeamMember
             name="Carlos Moreno"
-            role="Co-Fundador / CEO"
+            role="Ingeniero de Inteligencia Artificial"
             imageUrl="/images/carlos-moreno.jpeg"
           />
           <TeamMember
             name="Alejandro Picallo"
-            role="Co-Fundador / CTO"
+            role="Director de Marketing"
             imageUrl="/images/picallo.jpg"
           />
           <TeamMember
             name="Pablo Fora"
-            role="Líder de Desarrollo"
+            role="Ingeniero Industrial especializado en automatización de procesos"
             imageUrl="/images/pablo.jpg"
           />
         </div>
@@ -276,7 +276,8 @@ function ChatbotSection() {
         <p className="mx-auto mb-8 max-w-2xl text-center text-gray-700">
           Nuestro chatbot ayuda a gestionar consultas, capturar leads y mejorar la
           experiencia del cliente. Disponible 24/7, aprende de cada interacción y
-          reduce la carga de trabajo en atención al cliente.
+          reduce la carga de trabajo en atención al cliente. ¿No sabes con que te podemos ayudar?
+          ¡Cuéntale a nuestro chatbot de que trata tu empresa y averiguarás todo lo que podemos hacer por ti!
         </p>
         <div className="mt-10 flex flex-col items-center justify-center space-y-6">
           {/* COMPONENTE DEL CHATBOT REAL */}
