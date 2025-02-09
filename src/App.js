@@ -402,7 +402,7 @@ function ContactSection() {
 
       const data = await response.json();
       if (response.ok) {
-        setResponseMessage("Correo enviado exitosamente.");
+        setResponseMessage("Correo enviado exitosamente. Le responderemos lo antes posible.");
         // Reiniciamos el formulario
         setFormData({
           nombre: "",
