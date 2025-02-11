@@ -279,19 +279,16 @@ function ChatbotSection() {
           reduce la carga de trabajo en atención al cliente. ¿No sabes con qué te podemos ayudar?
           ¡Cuéntale a nuestro chatbot de qué trata tu empresa y averiguarás todo lo que podemos hacer por ti!
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center space-y-6">
-          <div className="w-full max-w-xl">
-            <Card className="rounded-2xl shadow-xl border border-indigo-200 p-6">
-              <CardContent>
-                <InterfazGraficaPymerIA />
-              </CardContent>
-            </Card>
+        <div className="mt-10 flex flex-col items-center justify-center">
+          <div className="w-full max-w-3xl rounded-2xl bg-white p-8 shadow-xl border border-indigo-200">
+            <InterfazGraficaPymerIA />
           </div>
         </div>
       </motion.div>
     </section>
   );
 }
+
 
 // ---------------------------------------
 // 10. Sección de Casos de Éxito
