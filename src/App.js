@@ -280,9 +280,12 @@ function ChatbotSection() {
           ¡Cuéntale a nuestro chatbot de qué trata tu empresa y averiguarás todo lo que podemos hacer por ti!
         </p>
         <div className="mt-10 flex flex-col items-center justify-center space-y-6">
-          {/* COMPONENTE DEL CHATBOT REAL */}
           <div className="w-full max-w-xl">
-            <InterfazGraficaPymerIA />
+            <Card className="rounded-2xl shadow-xl border border-indigo-200 p-6">
+              <CardContent>
+                <InterfazGraficaPymerIA />
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.div>
