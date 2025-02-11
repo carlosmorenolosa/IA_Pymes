@@ -391,24 +391,6 @@ function SuccessStoryCard({ name, summary, before, after }) {
   );
 }
 
-// ---------------------------------------
-// 11. Tarjeta minimalista para cada Caso de Éxito
-// ---------------------------------------
-function SuccessStoryCard({ name, summary }) {
-  return (
-    <div
-      className="relative flex flex-col items-start justify-between
-                    rounded-2xl bg-white px-6 py-8 shadow-md
-                    transition-transform duration-300 hover:-translate-y-1"
-    >
-      <div className="absolute right-4 top-4 text-green-500 z-10">
-        <CheckCircle className="h-8 w-8" />
-      </div>
-      <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
-      <p className="mb-2 text-sm text-gray-600">{summary}</p>
-    </div>
-  );
-}
 
 // ---------------------------------------
 // 12. Sección de Contacto
