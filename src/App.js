@@ -297,18 +297,45 @@ function SuccessStoriesSection() {
   const successStories = [
     {
       name: "Hospital de Toledo (IA Generativa)",
-      summary:
-        "IA para tratamientos dermatológicos personalizados. Redujo tiempos y mejoró la calidad en atención.",
+      summary: "IA para tratamientos dermatológicos personalizados.",
+      before: [
+        { title: "Procesos estandarizados", description: "Protocolos generales sin personalización." },
+        { title: "Tiempos prolongados", description: "Proceso manual con largas esperas." },
+        { title: "Atención limitada", description: "Resultados subóptimos para pacientes." },
+      ],
+      after: [
+        { title: "Personalización a medida", description: "Tratamientos adaptados a cada paciente." },
+        { title: "Agilidad en la atención", description: "Respuesta rápida y eficiente." },
+        { title: "Mejora en la calidad", description: "Diagnósticos más precisos." },
+      ],
     },
     {
       name: "Puerto Marítimo de Alicante (Machine Learning)",
-      summary:
-        "Modelo para predecir daños en contenedores, ahorrando costes y tiempos de reparación.",
+      summary: "Modelo para predecir daños en contenedores.",
+      before: [
+        { title: "Inspecciones manuales", description: "Detección reactiva de daños." },
+        { title: "Costes elevados", description: "Intervenciones de emergencia costosas." },
+        { title: "Ineficiencias operativas", description: "Impacto negativo en la logística." },
+      ],
+      after: [
+        { title: "Predicción proactiva", description: "Anticipa daños con precisión." },
+        { title: "Reducción de costes", description: "Planificación eficiente de reparaciones." },
+        { title: "Optimización logística", description: "Mejora operativa en el puerto." },
+      ],
     },
     {
       name: "Puerto Marítimo de Alicante (Visión Artificial)",
-      summary:
-        "Visión artificial para detectar contenedores dañados y notificar automáticamente a propietarios.",
+      summary: "Visión artificial para detectar contenedores dañados.",
+      before: [
+        { title: "Detección limitada", description: "Inspecciones rutinarias con margen de error." },
+        { title: "Notificación tardía", description: "Alertas manuales que generan retrasos." },
+        { title: "Impacto en la logística", description: "Operativa afectada por demoras." },
+      ],
+      after: [
+        { title: "Detección automatizada", description: "Identifica daños en tiempo real." },
+        { title: "Notificación inmediata", description: "Alertas automáticas y rápidas." },
+        { title: "Flujo optimizado", description: "Mejora en logística y seguridad." },
+      ],
     },
   ];
 
@@ -321,20 +348,46 @@ function SuccessStoriesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
-          Casos de Éxito
-        </h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Casos de Éxito</h2>
         <div className="mx-auto mt-10 grid gap-6 md:grid-cols-3">
           {successStories.map((story, i) => (
-            <SuccessStoryCard
-              key={i}
-              name={story.name}
-              summary={story.summary}
-            />
+            <SuccessStoryCard key={i} {...story} />
           ))}
         </div>
       </motion.div>
     </section>
+  );
+}
+
+function SuccessStoryCard({ name, summary, before, after }) {
+  return (
+    <div className="relative flex flex-col rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
+      <div className="absolute right-4 top-4 text-green-500">
+        <CheckCircle className="h-8 w-8" />
+      </div>
+      <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
+      <p className="mb-4 text-sm text-gray-600">{summary}</p>
+      <div className="mb-4">
+        <h5 className="text-md font-bold text-gray-800">Antes</h5>
+        <ul className="list-disc pl-5">
+          {before.map((item, idx) => (
+            <li key={idx} className="text-sm text-gray-600">
+              <strong>{item.title}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h5 className="text-md font-bold text-gray-800">Después</h5>
+        <ul className="list-disc pl-5">
+          {after.map((item, idx) => (
+            <li key={idx} className="text-sm text-gray-600">
+              <strong>{item.title}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
