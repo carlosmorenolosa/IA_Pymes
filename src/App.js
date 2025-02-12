@@ -274,7 +274,10 @@ function ChatbotSection() {
         <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
           🤖 Tu asistente virtual 24/7 para potenciar tu negocio
         </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-center text-gray-700">
+        <p
+          className="mx-auto mb-8 max-w-2xl text-gray-700"
+          style={{ textAlign: 'justify' }}
+        >
           Nuestro chatbot transforma la atención al cliente: <strong>gestiona consultas, captura leads y mejora la experiencia de tus usuarios</strong> sin esfuerzo. Aprende de cada interacción y <strong>automatiza tareas</strong>, reduciendo la carga de trabajo de tu equipo.
           ¿No estás seguro de cómo puede ayudarte? <strong>Háblale a nuestro chatbot sobre tu empresa y descubre todo lo que puede hacer por ti.</strong> 🚀
         </p>
