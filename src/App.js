@@ -141,7 +141,10 @@ function AboutSection() {
         <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
           Sobre Nosotros
         </h2>
-        <div className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
+        <div
+          className="mx-auto mb-6 max-w-3xl text-gray-700"
+          style={{ textAlign: 'justify' }}
+        >
           <p>
             En IA4PYMES, creemos que la Inteligencia Artificial no debería ser exclusiva de las grandes corporaciones. Nuestra misión es hacer que las soluciones de IA sean <strong>accesibles, personalizadas y fáciles de integrar</strong> para que las PYMEs puedan crecer sin complicaciones.
           </p>
