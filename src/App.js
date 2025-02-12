@@ -363,22 +363,34 @@ function SuccessStoryCard({ name, summary, before, after }) {
       </div>
       <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
       <p className="mb-4 text-sm text-gray-600">{summary}</p>
+      
+      {/* Lista de ítems "antes" */}
       <div className="mb-4">
-        <h5 className="text-md font-bold text-gray-800">Antes</h5>
-        <ul className="list-disc pl-5">
+        <ul className="space-y-2">
           {before.map((item, idx) => (
-            <li key={idx} className="text-sm text-gray-600">
-              <strong>{item.title}:</strong> {item.description}
+            <li key={idx} className="flex items-start text-sm text-gray-600">
+              <span className="mr-2 text-xl" role="img" aria-label="incorrect">
+                ❌
+              </span>
+              <div>
+                <strong>{item.title}:</strong> {item.description}
+              </div>
             </li>
           ))}
         </ul>
       </div>
+      
+      {/* Lista de ítems "después" */}
       <div>
-        <h5 className="text-md font-bold text-gray-800">Después</h5>
-        <ul className="list-disc pl-5">
+        <ul className="space-y-2">
           {after.map((item, idx) => (
-            <li key={idx} className="text-sm text-gray-600">
-              <strong>{item.title}:</strong> {item.description}
+            <li key={idx} className="flex items-start text-sm text-gray-600">
+              <span className="mr-2 text-xl" role="img" aria-label="correct">
+                ✅
+              </span>
+              <div>
+                <strong>{item.title}:</strong> {item.description}
+              </div>
             </li>
           ))}
         </ul>
