@@ -359,7 +359,7 @@ function SuccessStoriesSection() {
         className="container mx-auto max-w-5xl"
       >
         <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Casos de Éxito</h2>
-        <div className="mx-auto mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-10 grid gap-6 md:grid-cols-4">
           {successStories.map((story, i) => (
             <SuccessStoryCard key={i} {...story} />
           ))}
