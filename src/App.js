@@ -312,7 +312,13 @@ function SuccessStoriesSection() {
       ],
     },
     {
-      name: "Puerto Marítimo de Alicante (Machine Learning)",
+      name: (
+        <>
+          Puerto Marítimo de Alicante
+          <br />
+          (Machine Learning)
+        </>
+      ),
       summary: "Modelo para predecir daños en contenedores.",
       before: [
         { title: "Inspecciones manuales", description: "Detección reactiva de daños." },
@@ -326,7 +332,13 @@ function SuccessStoriesSection() {
       ],
     },
     {
-      name: "Puerto Marítimo de Alicante (Visión Artificial)",
+      name: (
+        <>
+          Puerto Marítimo de Alicante
+          <br />
+          (Visión Artificial)
+        </>
+      ),
       summary: "Visión artificial para detectar contenedores dañados.",
       before: [
         { title: "Detección limitada", description: "Inspecciones rutinarias con margen de error." },
@@ -340,7 +352,13 @@ function SuccessStoriesSection() {
       ],
     },
     {
-      name: "Viajes Rascado (IA Generativa)",
+      name: (
+        <>
+          Viajes Rascado
+          <br />
+          (IA Generativa)
+        </>
+      ),
       summary: "🚀 IA para automatizar consultas, captar leads y optimizar posicionamiento.",
       before: [
         { title: "Atención manual", description: "Responder consultas llevaba demasiado tiempo." },
