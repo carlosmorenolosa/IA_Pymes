@@ -292,7 +292,13 @@ function ChatbotSection() {
 function SuccessStoriesSection() {
   const successStories = [
     {
-      name: "Hospital de Toledo (IA Generativa)",
+      name: (
+        <>
+          Hospital de Toledo
+          <br />
+          (IA Generativa)
+        </>
+      ),
       summary: "IA para tratamientos dermatológicos personalizados.",
       before: [
         { title: "Procesos estandarizados", description: "Protocolos generales sin personalización." },
