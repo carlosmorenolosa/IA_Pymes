@@ -333,6 +333,20 @@ function SuccessStoriesSection() {
         { title: "Flujo optimizado", description: "Mejora en logística y seguridad." },
       ],
     },
+    {
+      name: "Viajes Rascado (IA Generativa)",
+      summary: "🚀 IA para automatizar consultas, captar leads y optimizar posicionamiento.",
+      before: [
+        { title: "Atención manual", description: "Responder consultas llevaba demasiado tiempo." },
+        { title: "Oportunidades perdidas", description: "Difícil seguimiento de clientes potenciales." },
+        { title: "Baja visibilidad", description: "Posicionamiento digital poco optimizado." },
+      ],
+      after: [
+        { title: "Automatización eficiente", description: "Respuesta instantánea a consultas 24/7." },
+        { title: "Más leads, más ventas", description: "Captación y segmentación automática de clientes." },
+        { title: "Mayor visibilidad", description: "Optimización del posicionamiento con IA." },
+      ],
+    },
   ];
 
   return (
@@ -359,7 +373,7 @@ function SuccessStoryCard({ name, summary, before, after }) {
   return (
     <div className="relative flex flex-col rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
       <div className="absolute right-4 top-4 text-green-500">
-        <CheckCircle className="h-8 w-8" />
+        <span className="text-2xl">🏆</span>
       </div>
       <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
       <p className="mb-4 text-sm text-gray-600">{summary}</p>
