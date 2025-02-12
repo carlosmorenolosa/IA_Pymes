@@ -93,8 +93,7 @@ function HomeSection() {
           Optimiza tu negocio con IA: Soluciones inteligentes para PYMEs.
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-gray-600">
-          Descubre cómo la inteligencia artificial puede transformar tu empresa y
-          potenciar tu crecimiento.
+          Descubre cómo la IA puede hacer crecer tu empresa y simplificar tu gestión.
         </p>
         <a href="#contact">
           <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
@@ -142,18 +141,17 @@ function AboutSection() {
         <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
           Sobre Nosotros
         </h2>
-        <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
-          Nuestra misión es proporcionar soluciones de Inteligencia Artificial
-          accesibles y personalizadas para ayudar a las PYMEs a crecer. Nos
-          diferenciamos por ofrecer una total personalización de nuestras
-          herramientas, integrándolas sin grandes cambios en tu infraestructura y
-          brindando soporte continuo.
-        </p>
-        <p className="mx-auto mb-10 max-w-3xl text-center text-gray-700">
-          Nuestra visión es capacitar a los negocios para que aprovechen todo el
-          potencial de la IA y sigan siendo competitivos en un mercado en
-          constante evolución.
-        </p>
+        <div className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
+          <p>
+            En IA4PYMES, creemos que la Inteligencia Artificial no debería ser exclusiva de las grandes corporaciones. Nuestra misión es hacer que las soluciones de IA sean <strong>accesibles, personalizadas y fáciles de integrar</strong> para que las PYMEs puedan crecer sin complicaciones.
+          </p>
+          <p className="mt-4">
+            Nos diferenciamos por ofrecer herramientas <strong>totalmente adaptadas a tu negocio</strong>, sin necesidad de cambios drásticos en tu infraestructura y con un soporte continuo que te acompaña en cada paso del camino.
+          </p>
+          <p className="mt-4">
+            Nuestra visión es <strong>empoderar a las empresas</strong> para que aprovechen el máximo potencial de la IA, manteniéndose competitivas en un mercado que evoluciona constantemente.
+          </p>
+        </div>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
           <TeamMember
             name="Carlos Moreno"
