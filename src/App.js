@@ -49,22 +49,22 @@ function Navbar() {
           IA4PYMEs
         </motion.h1>
         <nav className="hidden space-x-4 md:block">
-          <a href="#home" className="hover:text-indigo-600">
+          <a href="#home" className="text-indigo-600 hover:text-indigo-600">
             Inicio
           </a>
-          <a href="#about" className="hover:text-indigo-600">
+          <a href="#about" className="text-indigo-600 hover:text-indigo-600">
             Sobre Nosotros
           </a>
-          <a href="#services" className="hover:text-indigo-600">
+          <a href="#services" className="text-indigo-600 hover:text-indigo-600">
             Soluciones
           </a>
-          <a href="#chatbot" className="hover:text-indigo-600">
+          <a href="#chatbot" className="text-indigo-600 hover:text-indigo-600">
             Chatbot IA
           </a>
-          <a href="#success-stories" className="hover:text-indigo-600">
+          <a href="#success-stories" className="text-indigo-600 hover:text-indigo-600">
             Casos de Éxito
           </a>
-          <a href="#contact" className="hover:text-indigo-600">
+          <a href="#contact" className="text-indigo-600 hover:text-indigo-600">
             Contacto
           </a>
         </nav>
