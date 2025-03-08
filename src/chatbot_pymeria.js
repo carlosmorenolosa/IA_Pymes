@@ -94,7 +94,10 @@ export default function InterfazGraficaPymerIA() {
                 : 'self-start bg-white')
             }
           >
-            <p className="mb-1 text-sm font-semibold text-indigo-600">{msg.sender}</p>
+            {/* Mostrar solo el nombre si el mensaje NO es del usuario */}
+            {msg.sender !== 'User' && (
+              <p className="mb-1 text-sm font-semibold text-indigo-600">{msg.sender}</p>
+            )}
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               className="prose text-sm leading-normal text-gray-700"
