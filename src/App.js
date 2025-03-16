@@ -592,7 +592,7 @@ function ContactSection() {
             <a href="#" className="text-indigo-600 hover:text-indigo-400">
               Twitter
             </a>
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">
+            <a href="https://www.linkedin.com/in/alejandro-picallo-galante-543557324/" className="text-indigo-600 hover:text-indigo-400">
               LinkedIn
             </a>
           </div>
