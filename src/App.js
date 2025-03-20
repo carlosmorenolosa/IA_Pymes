@@ -640,20 +640,72 @@ function ContactSection() {
             <p className="mt-4 text-center text-gray-700">{responseMessage}</p>
           )}
         </div>
-        <div className="mt-10 flex flex-col items-center space-y-4 text-center">
-          <p className="text-gray-700">contacto@ia4pymes.tech</p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">
-              Facebook
-            </a>
-            <a href="#" className="text-indigo-600 hover:text-indigo-400">
-              Twitter
-            </a>
-            <a href="https://www.linkedin.com/in/alejandro-picallo-galante-543557324/" className="text-indigo-600 hover:text-indigo-400">
-              LinkedIn
+        <div className="mt-10 text-center">
+          <h3 className="mb-4 text-xl font-semibold text-gray-800">
+            ¡Contáctanos por departamento!
+          </h3>
+
+          {/* Correos de cada departamento en un grid */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 text-gray-700">
+            <p>
+              <strong>Administración:</strong>{" "}
+              <a
+                href="mailto:contacto@ia4pymes.tech"
+                className="underline hover:text-indigo-500"
+              >
+                contacto@ia4pymes.tech
+              </a>
+            </p>
+            <p>
+              <strong>Departamento de Marketing:</strong>{" "}
+              <a
+                href="mailto:alejandro@ia4pymes.tech"
+                className="underline hover:text-indigo-500"
+              >
+                alejandro@ia4pymes.tech
+              </a>
+            </p>
+            <p>
+              <strong>Departamento de IA:</strong>{" "}
+              <a
+                href="mailto:carlos@ia4pymes.tech"
+                className="underline hover:text-indigo-500"
+              >
+                carlos@ia4pymes.tech
+              </a>
+            </p>
+            <p>
+              <strong>Automatización de Procesos:</strong>{" "}
+              <a
+                href="mailto:pablo@ia4pymes.tech"
+                className="underline hover:text-indigo-500"
+              >
+                pablo@ia4pymes.tech
+              </a>
+            </p>
+          </div>
+
+          {/* Solo LinkedIn con icono */}
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://www.linkedin.com/in/alejandro-picallo-galante-543557324/"
+              className="inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path d="M100.28 448H7.4V149.06h92.88zm-46.44-338A53.56 53.56 0 011.4 56a53.56 53.56 0 01106.84 0 53.56 53.56 0 01-53.56 54zM447.9 448h-92.68V302.4c0-34.7-.7-79.37-48.33-79.37-48.34 0-55.77 37.79-55.77 76.83V448h-92.66V149.06h88.91v40.8h1.28c12.39-23.5 42.66-48.33 87.87-48.33 94 0 111.31 61.87 111.31 142.3V448z" />
+              </svg>
+              <span>LinkedIn</span>
             </a>
           </div>
         </div>
+
       </motion.div>
     </section>
   );
