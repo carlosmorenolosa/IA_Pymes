@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react"; // Iconos para el menú móvil
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
@@ -37,9 +40,23 @@ export default function IABusinessWebsite() {
 // 2. Navbar
 // ---------------------------------------
 function Navbar() {
+  const [scrolling, setScrolling] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolling(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolling ? "bg-white shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
+        {/* Logo */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,30 +65,62 @@ function Navbar() {
         >
           IA4PYMEs
         </motion.h1>
-        <nav className="hidden space-x-4 md:block">
-          <a href="#home" className="text-indigo-600 hover:text-indigo-600">
-            Inicio
-          </a>
-          <a href="#about" className="text-indigo-600 hover:text-indigo-600">
-            Sobre Nosotros
-          </a>
-          <a href="#services" className="text-indigo-600 hover:text-indigo-600">
-            Soluciones
-          </a>
-          <a href="#chatbot" className="text-indigo-600 hover:text-indigo-600">
-            Chatbot IA
-          </a>
-          <a href="#success-stories" className="text-indigo-600 hover:text-indigo-600">
-            Casos de Éxito
-          </a>
-          <a href="#contact" className="text-indigo-600 hover:text-indigo-600">
+
+        {/* Menú Desktop */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
+          {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot IA", "Casos de Éxito"].map(
+            (item, index) => (
+              <a
+                key={index}
+                href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                className="relative text-gray-700 hover:text-indigo-500 transition-all duration-300
+                  after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
+                  after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item}
+              </a>
+            )
+          )}
+          {/* Botón Contacto */}
+          <a
+            href="#contact"
+            className="bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300"
+          >
             Contacto
           </a>
         </nav>
+
+        {/* Menú Móvil */}
+        <button
+          className="md:hidden text-gray-700"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {menuOpen && (
+          <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
+            <nav className="flex flex-col space-y-4 py-4 text-center">
+              {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot IA", "Casos de Éxito", "Contacto"].map(
+                (item, index) => (
+                  <a
+                    key={index}
+                    href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                    className="block text-gray-700 hover:text-indigo-500 transition-all duration-300"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                )
+              )}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
 }
+
 
 // ---------------------------------------
 // 3. Sección de Inicio (HomeSection)
