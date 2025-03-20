@@ -80,8 +80,10 @@ function HomeSection() {
   return (
     <section
       id="home"
-      className="flex items-center justify-center bg-gray-50 py-16 px-4"
+      className="relative flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-500 text-white py-24 px-4"
+      style={{ minHeight: "80vh" }}
     >
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
