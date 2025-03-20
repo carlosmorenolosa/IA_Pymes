@@ -126,7 +126,7 @@ function HomeSection() {
 // ---------------------------------------
 function BenefitCard({ icon, title }) {
   return (
-    <Card className="rounded-2xl shadow-md">
+    <Card className="rounded-2xl shadow-md transition-all transform hover:scale-105 hover:shadow-xl">
       <CardContent className="flex flex-col items-center p-6 text-center">
         <div className="mb-4 text-indigo-600">{icon}</div>
         <h4 className="font-semibold text-gray-700">{title}</h4>
@@ -258,7 +258,7 @@ function ServicesSection() {
 // ---------------------------------------
 function ServiceCard({ title, description, icon }) {
   return (
-    <Card className="rounded-2xl shadow-md">
+    <Card className="rounded-2xl shadow-md transition-all transform hover:scale-105 hover:shadow-xl">
       <CardContent className="p-6">
         <div className="mb-4">{icon}</div>
         <h3 className="mb-2 text-xl font-semibold text-gray-800">{title}</h3>
