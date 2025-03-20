@@ -56,14 +56,15 @@ function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         {/* Logo */}
-        <motion.h1
+        <motion.img
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl font-bold text-indigo-600"
-        >
-          IA4PYMEs
-        </motion.h1>
+          src="/images/logo.png"     // Ajusta la ruta si es distinta
+          alt="IA4PYMEs Logo"
+          className="h-10 w-auto"    // Ajusta la altura y anchura según lo que necesites
+        />
+
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
