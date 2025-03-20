@@ -62,7 +62,7 @@ function Navbar() {
           transition={{ duration: 0.5 }}
           src="/images/logo.png"     // Ajusta la ruta si es distinta
           alt="IA4PYMEs Logo"
-          className="h-10 w-auto"    // Ajusta la altura y anchura según lo que necesites
+          className="h-16 w-auto"    // Ajusta la altura y anchura según lo que necesites
         />
 
 
