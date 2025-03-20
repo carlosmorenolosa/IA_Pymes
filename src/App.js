@@ -83,7 +83,7 @@ function Navbar() {
           )}
           {/* Botón Contacto */}
           <a
-            href="#contact"
+            href="#contacto"
             className="bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300"
           >
             Contacto
@@ -101,7 +101,7 @@ function Navbar() {
         {menuOpen && (
           <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
             <nav className="flex flex-col space-y-4 py-4 text-center">
-              {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot IA", "Casos de Éxito", "Contacto"].map(
+              {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot", "Casos de Éxito", "Contacto"].map(
                 (item, index) => (
                   <a
                     key={index}
@@ -153,7 +153,7 @@ function HomeSection() {
         <p className="mx-auto mb-8 max-w-2xl text-gray-600">
           Descubre cómo la IA puede hacer crecer tu empresa y simplificar tu gestión.
         </p>
-        <a href="#contact">
+        <a href="#contacto">
           <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
             Agenda una consulta gratuita
           </Button>
@@ -567,7 +567,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-gray-50 py-16 px-4 scroll-mt-24">
+    <section id="contacto" className="bg-gray-50 py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
