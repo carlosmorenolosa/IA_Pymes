@@ -67,7 +67,7 @@ function Navbar() {
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
-          {["Home", "About", "Services", "Chatbot", "Success Stories"].map(
+          {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot", "Casos de Éxito"].map(
             (item, index) => (
               <a
                 key={index}
@@ -127,7 +127,7 @@ function Navbar() {
 function HomeSection() {
   return (
     <section
-      id="home"
+      id="Inicio"
       className="relative flex items-center justify-center bg-gradient-to-b from-blue-100 to-white text-gray-900 py-24 px-4"
       style={{ minHeight: "80vh" }}
     >
@@ -187,7 +187,7 @@ function BenefitCard({ icon, title }) {
 // ---------------------------------------
 function AboutSection() {
   return (
-    <section id="about" className="bg-white py-16 px-4">
+    <section id="Sobre Nosotros" className="bg-white py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -262,7 +262,7 @@ function TeamMember({ name, role, imageUrl }) {
 // ---------------------------------------
 function ServicesSection() {
   return (
-    <section id="services" className="bg-gray-50 py-16 px-4">
+    <section id="Soluciones" className="bg-gray-50 py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -320,7 +320,7 @@ function ServiceCard({ title, description, icon }) {
 // ---------------------------------------
 function ChatbotSection() {
   return (
-    <section id="chatbot" className="bg-white py-16 px-4">
+    <section id="Chatbot" className="bg-white py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -437,7 +437,7 @@ function SuccessStoriesSection() {
   ];
 
   return (
-    <section id="success-stories" className="bg-gray-50 py-16 px-4">
+    <section id="Casos de Éxito" className="bg-gray-50 py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
