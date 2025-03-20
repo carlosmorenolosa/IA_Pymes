@@ -67,7 +67,7 @@ function Navbar() {
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
-          {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot IA", "Casos de Éxito"].map(
+          {["Home", "About", "Services", "Chatbot", "Success Stories"].map(
             (item, index) => (
               <a
                 key={index}
