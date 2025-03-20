@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react"; // Iconos para el menú móvil
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
@@ -12,6 +11,8 @@ import {
   BarChart,
   Users,
   MonitorSmartphone,
+  Menu,
+  X,
   CheckCircle,
 } from "lucide-react";
 
