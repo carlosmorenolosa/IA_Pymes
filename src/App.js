@@ -97,7 +97,7 @@ function HomeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-4 text-5xl font-extrabold md:text-6xl text-indigo-600"
+          className="mb-4 text-4xl font-extrabold md:text-5xl text-indigo-600"
         >
           Optimiza tu negocio con IA: Soluciones inteligentes para PYMEs
         </motion.h2>
