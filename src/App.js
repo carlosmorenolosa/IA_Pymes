@@ -99,7 +99,7 @@ function HomeSection() {
           viewport={{ once: true }}
           className="mb-4 text-4xl font-extrabold md:text-5xl text-indigo-600"
         >
-          Optimiza tu negocio con IA: Soluciones inteligentes para PYMEs
+          Optimiza tu negocio con IA:<br /> Soluciones inteligentes para PYMEs
         </motion.h2>
 
         <p className="mx-auto mb-8 max-w-2xl text-gray-600">
