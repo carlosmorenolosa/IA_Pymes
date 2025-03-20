@@ -92,9 +92,16 @@ function HomeSection() {
         viewport={{ once: true }}
         className="max-w-5xl text-center"
       >
-        <h2 className="mb-4 text-3xl font-bold text-indigo-600 md:text-4xl">
-          Optimiza tu negocio con IA: Soluciones inteligentes para PYMEs.
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-4 text-5xl font-extrabold md:text-6xl"
+        >
+          Optimiza tu negocio con IA
+        </motion.h2>
+
         <p className="mx-auto mb-8 max-w-2xl text-gray-600">
           Descubre cómo la IA puede hacer crecer tu empresa y simplificar tu gestión.
         </p>
