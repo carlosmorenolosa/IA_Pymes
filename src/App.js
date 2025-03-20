@@ -188,7 +188,7 @@ function BenefitCard({ icon, title }) {
 // ---------------------------------------
 function AboutSection() {
   return (
-    <section id="sobre-nosotros" className="bg-white py-16 px-4">
+    <section id="sobre-nosotros" className="bg-white py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -263,7 +263,7 @@ function TeamMember({ name, role, imageUrl }) {
 // ---------------------------------------
 function ServicesSection() {
   return (
-    <section id="soluciones" className="bg-gray-50 py-16 px-4">
+    <section id="soluciones" className="bg-gray-50 py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -321,7 +321,7 @@ function ServiceCard({ title, description, icon }) {
 // ---------------------------------------
 function ChatbotSection() {
   return (
-    <section id="chatbot" className="bg-white py-16 px-4">
+    <section id="chatbot" className="bg-white py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -438,7 +438,7 @@ function SuccessStoriesSection() {
   ];
 
   return (
-    <section id="casos-de-éxito" className="bg-gray-50 py-16 px-4">
+    <section id="casos-de-éxito" className="bg-gray-50 py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -567,7 +567,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-gray-50 py-16 px-4">
+    <section id="contact" className="bg-gray-50 py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
