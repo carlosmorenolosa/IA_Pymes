@@ -645,8 +645,8 @@ function ContactSection() {
             ¡Contáctanos por departamento!
           </h3>
 
-          {/* Correos de cada departamento en un grid */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 text-gray-700">
+          {/* Correos de cada departamento en una sola columna y centrados */}
+          <div className="flex flex-col items-center space-y-3 text-gray-700">
             <p>
               <strong>Administración:</strong>{" "}
               <a
