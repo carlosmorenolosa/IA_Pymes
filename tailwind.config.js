@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         brandBlue: "#003d8e",
       },
+      fontFamily: {
+        sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+      },
     },
   },
   plugins: [
