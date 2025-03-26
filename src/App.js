@@ -14,6 +14,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 
+import Slider from "react-slick";
 // Importa tu componente del chatbot
 import InterfazGraficaPymerIA from "./chatbot_pymeria";
 
@@ -356,148 +357,55 @@ function ChatbotSection() {
 function SuccessStoriesSection() {
   const successStories = [
     {
-      name: (
-        <>
-          Hospital de Toledo
-          <br />
-          (IA Generativa)
-        </>
-      ),
-      summary: "IA para tratamientos dermatológicos personalizados.",
-      before: [
-        { title: "Procesos estandarizados", description: "Protocolos generales sin personalización." },
-        { title: "Tiempos prolongados", description: "Proceso manual con largas esperas." },
-        { title: "Atención limitada", description: "Resultados subóptimos para pacientes." },
-      ],
-      after: [
-        { title: "Personalización a medida", description: "Tratamientos adaptados a cada paciente." },
-        { title: "Agilidad en la atención", description: "Respuesta rápida y eficiente." },
-        { title: "Mejora en la calidad", description: "Diagnósticos más precisos." },
-      ],
+      title: "Casos reales, impacto tangible",
+      client: "Hospital Universitario de Toledo",
+      description: "Tratamientos dermatológicos personalizados, más rápidos y precisos para cada paciente",
     },
     {
-      name: (
-        <>
-          Puerto Marítimo de Alicante
-          <br />
-          (Machine Learning)
-        </>
-      ),
-      summary: "Modelo para predecir daños en contenedores.",
-      before: [
-        { title: "Inspecciones manuales", description: "Detección reactiva de daños." },
-        { title: "Costes elevados", description: "Intervenciones de emergencia costosas." },
-        { title: "Ineficiencias operativas", description: "Impacto negativo en la logística." },
-      ],
-      after: [
-        { title: "Predicción proactiva", description: "Anticipa daños con precisión." },
-        { title: "Reducción de costes", description: "Planificación eficiente de reparaciones." },
-        { title: "Optimización logística", description: "Mejora operativa en el puerto." },
-      ],
+      title: "Soluciones Inteligentes. Resultados Extraordinarios",
+      client: "Puerto Marítimo de Alicante",
+      description: "Visión artificial para detectar contenedores dañados en tiempo real, optimizando la logística y mejorando la seguridad operativa",
     },
     {
-      name: (
-        <>
-          Puerto Marítimo de Alicante
-          <br />
-          (Visión Artificial)
-        </>
-      ),
-      summary: "Visión artificial para detectar contenedores dañados.",
-      before: [
-        { title: "Detección limitada", description: "Inspecciones rutinarias con margen de error." },
-        { title: "Notificación tardía", description: "Alertas manuales que generan retrasos." },
-        { title: "Impacto en la logística", description: "Operativa afectada por demoras." },
-      ],
-      after: [
-        { title: "Detección automatizada", description: "Identifica daños en tiempo real." },
-        { title: "Notificación inmediata", description: "Alertas automáticas y rápidas." },
-        { title: "Flujo optimizado", description: "Mejora en logística y seguridad." },
-      ],
+      title: "Clientes que inspiran, soluciones que transforman",
+      client: "Terminales Marítimas del Sureste",
+      description: "Modelo predictivo de daños en contenedores: menos costes, más control logístico",
     },
     {
-      name: (
-        <>
-          Viajes Rascado
-          <br />
-          (IA Generativa)
-        </>
-      ),
-      summary: "🚀 IA para automatizar consultas, captar leads y optimizar posicionamiento.",
-      before: [
-        { title: "Atención manual", description: "Responder consultas llevaba demasiado tiempo." },
-        { title: "Oportunidades perdidas", description: "Difícil seguimiento de clientes potenciales." },
-        { title: "Baja visibilidad", description: "Posicionamiento digital poco optimizado." },
-      ],
-      after: [
-        { title: "Automatización eficiente", description: "Respuesta instantánea a consultas 24/7." },
-        { title: "Más leads, más ventas", description: "Captación y segmentación automática de clientes." },
-        { title: "Mayor visibilidad", description: "Optimización del posicionamiento con IA." },
-      ],
+      title: "Juntos construimos el cambio",
+      client: "Agencia Viajes Rascado",
+      description: "Automatización de consultas, captación de leads y mejora del posicionamiento digital para vender más y mejor",
     },
   ];
 
-  return (
-    <section id="casos-de-éxito" className="bg-gray-50 py-16 px-4 scroll-mt-24">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="container mx-auto max-w-5xl"
-      >
-        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">Casos de Éxito</h2>
-        <div className="mx-auto mt-10 grid gap-6 md:grid-cols-4">
-          {successStories.map((story, i) => (
-            <SuccessStoryCard key={i} {...story} />
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-}
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
 
-function SuccessStoryCard({ name, summary, before, after }) {
   return (
-    <div className="relative flex flex-col rounded-2xl bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
-      <div className="absolute right-4 top-4 text-green-500">
-        <span className="text-2xl">🏆</span>
-      </div>
-      <h4 className="mb-2 text-lg font-semibold text-gray-800">{name}</h4>
-      <p className="mb-4 text-sm text-gray-600">{summary}</p>
-      
-      {/* Lista de ítems "antes" */}
-      <div className="mb-4">
-        <ul className="space-y-2">
-          {before.map((item, idx) => (
-            <li key={idx} className="flex items-start text-sm text-gray-600">
-              <span className="mr-2 text-xl" role="img" aria-label="incorrect">
-                ❌
-              </span>
-              <div>
-                <strong>{item.title}:</strong> {item.description}
+    <section id="casos-de-éxito" className="bg-white py-16 px-4 scroll-mt-24">
+      <div className="mx-auto max-w-3xl">
+        <Slider {...settings}>
+          {successStories.map((story, idx) => (
+            <div key={idx} className="px-4">
+              <div className="text-center">
+                <h2 className="mb-2 text-3xl font-bold text-brandBlue">{story.title}</h2>
+                <h3 className="text-lg font-semibold text-gray-800">{story.client}</h3>
+                <div className="w-10 h-0.5 mx-auto my-4 bg-brandBlue" />
+                <p className="text-gray-700 max-w-xl mx-auto">{story.description}</p>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </Slider>
       </div>
-      
-      {/* Lista de ítems "después" */}
-      <div>
-        <ul className="space-y-2">
-          {after.map((item, idx) => (
-            <li key={idx} className="flex items-start text-sm text-gray-600">
-              <span className="mr-2 text-xl" role="img" aria-label="correct">
-                ✅
-              </span>
-              <div>
-                <strong>{item.title}:</strong> {item.description}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </section>
   );
 }
 
@@ -576,10 +484,10 @@ function ContactSection() {
         className="container mx-auto max-w-5xl"
       >
         <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
-          Contacto / Solicita una Demo
+          El momento es ahora. ¿Construimos juntos?
         </h2>
         <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
-          ¿Listo para llevar tu negocio al siguiente nivel? Rellena el formulario
+          ¿Listo para llevar tu negocio al <strong>siguiente nivel</strong>? Rellena el formulario
           para ponerte en contacto con nosotros.
         </p>
         <div className="mx-auto mt-8 max-w-xl">
@@ -643,7 +551,7 @@ function ContactSection() {
         </div>
         <div className="mt-10 text-center">
           <h3 className="mb-4 text-xl font-semibold text-gray-800">
-            ¡Contáctanos por departamento!
+            Estamos esperando tu <strong>mensaje</strong>
           </h3>
 
           {/* Correos de cada departamento en una sola columna y centrados */}

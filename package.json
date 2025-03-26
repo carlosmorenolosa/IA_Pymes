@@ -17,7 +17,9 @@
       "postcss": "^8.4.21",
       "autoprefixer": "^10.4.13",
       "react-markdown": "^8.0.3",
-      "remark-gfm": "^3.0.1"
+      "remark-gfm": "^3.0.1",
+      "react-slick": "^0.29.0",
+      "slick-carousel": "^1.8.1"
     }
   }
   
