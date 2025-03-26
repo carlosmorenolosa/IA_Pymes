@@ -146,12 +146,12 @@ function HomeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-4 text-5xl font-extrabold md:text-6xl text-brandBlue"
+          className="mb-4 text-4xl font-extrabold md:text-6xl text-brandBlue"
         >
           DEMOCRATIZANDO LA IA
         </motion.h2>
 
-        <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl text-gray-600">
+        <p className="mx-auto mb-8 max-w-2xl text-base md:text-xl text-gray-600">
           Descubre cómo la IA puede hacer <strong>crecer</strong> tu empresa y <strong>simplificar</strong> tu gestión.
         </p>
         <a href="#contacto">
@@ -391,7 +391,7 @@ function SuccessStoriesSection() {
 
   return (
     <section id="casos-de-éxito" className="bg-white py-16 px-4 scroll-mt-24">
-      <div className="mx-auto max-w-4xl w-full px-4">
+      <div className="mx-auto max-w-5xl w-full px-4">
         <Slider {...settings}>
         {successStories.map((story, idx) => (
           <div key={idx} className="px-4 py-12">
