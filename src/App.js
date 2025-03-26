@@ -15,8 +15,6 @@ import {
 } from "lucide-react";
 
 import Slider from "react-slick";
-// Importa tu componente del chatbot
-import InterfazGraficaPymerIA from "./chatbot_pymeria";
 
 // ---------------------------------------
 // 1. Componente principal
