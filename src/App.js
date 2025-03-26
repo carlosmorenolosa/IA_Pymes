@@ -67,19 +67,23 @@ function Navbar() {
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
-          {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot", "Casos de Éxito"].map(
-            (item, index) => (
+        {["Inicio", "Sobre Nosotros", "Soluciones", "PymerIA", "Casos de Éxito"].map(
+          (item, index) => {
+            const link = item === "PymerIA" ? "chatbot" : item.toLowerCase().replace(/\s/g, "-");
+            return (
               <a
                 key={index}
-                href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                href={`#${link}`}
                 className="relative text-gray-700 hover:text-brandBlue/80 transition-all duration-300
                   after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
                   after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item}
               </a>
-            )
-          )}
+            );
+          }
+        )}
+
           {/* Botón Contacto */}
           <a
             href="#contacto"
@@ -100,18 +104,21 @@ function Navbar() {
         {menuOpen && (
           <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
             <nav className="flex flex-col space-y-4 py-4 text-center">
-              {["Inicio", "Sobre Nosotros", "Soluciones", "Chatbot", "Casos de Éxito", "Contacto"].map(
-                (item, index) => (
+            {["Inicio", "Sobre Nosotros", "Soluciones", "PymerIA", "Casos de Éxito", "Contacto"].map(
+              (item, index) => {
+                const link = item === "PymerIA" ? "chatbot" : item.toLowerCase().replace(/\s/g, "-");
+                return (
                   <a
                     key={index}
-                    href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                    href={`#${link}`}
                     className="block text-gray-700 hover:text-brandBlue/80 transition-all duration-300"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item}
                   </a>
-                )
-              )}
+                );
+              }
+            )}
             </nav>
           </div>
         )}
