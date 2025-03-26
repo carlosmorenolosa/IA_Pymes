@@ -6,3 +6,22 @@ html {
 }
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
+/* Aumenta tamaño y color de las flechas */
+.slick-prev:before,
+.slick-next:before {
+  color: #003d8e; /* tu brandBlue */
+  font-size: 30px;
+}
+
+/* Centra verticalmente las flechas */
+.slick-prev, .slick-next {
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+html, body {
+    background-color: white;
+  }
+  

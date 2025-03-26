@@ -61,7 +61,7 @@ function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          src="/images/logo.png"     // Ajusta la ruta si es distinta
+          src="/images/logo_web.png"     // Ajusta la ruta si es distinta
           alt="IA4PYMEs Logo"
           className="h-16 w-auto"    // Ajusta la altura y anchura según lo que necesites
         />
@@ -130,7 +130,7 @@ function HomeSection() {
   return (
     <section
       id="inicio"
-      className="relative flex items-center justify-center bg-gradient-to-b from-blue-100 to-white text-gray-900 py-24 px-4"
+      className="relative flex items-center justify-center bg-white text-gray-900 py-24 px-4"
       style={{ minHeight: "80vh" }}
     >
 
@@ -264,7 +264,7 @@ function TeamMember({ name, role, imageUrl }) {
 // ---------------------------------------
 function ServicesSection() {
   return (
-    <section id="soluciones" className="bg-gray-50 py-16 px-4 scroll-mt-24">
+    <section id="soluciones" className="bg-white py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -391,18 +391,20 @@ function SuccessStoriesSection() {
 
   return (
     <section id="casos-de-éxito" className="bg-white py-16 px-4 scroll-mt-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-4xl w-full px-4">
         <Slider {...settings}>
-          {successStories.map((story, idx) => (
-            <div key={idx} className="px-4">
-              <div className="text-center">
-                <h2 className="mb-2 text-3xl font-bold text-brandBlue">{story.title}</h2>
-                <h3 className="text-lg font-semibold text-gray-800">{story.client}</h3>
-                <div className="w-10 h-0.5 mx-auto my-4 bg-brandBlue" />
-                <p className="text-gray-700 max-w-xl mx-auto">{story.description}</p>
-              </div>
+        {successStories.map((story, idx) => (
+          <div key={idx} className="px-4 py-12">
+            <div className="text-center">
+              <h2 className="mb-2 text-3xl md:text-4xl font-bold text-brandBlue">{story.title}</h2>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800">{story.client}</h3>
+              <div className="w-10 h-0.5 mx-auto my-4 bg-brandBlue" />
+              <p className="text-gray-700 max-w-2xl mx-auto text-base md:text-lg">
+                {story.description}
+              </p>
             </div>
-          ))}
+          </div>
+        ))}
         </Slider>
       </div>
     </section>
@@ -475,7 +477,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="bg-gray-50 py-16 px-4 scroll-mt-24">
+    <section id="contacto" className="bg-white py-16 px-4 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -551,7 +553,7 @@ function ContactSection() {
         </div>
         <div className="mt-10 text-center">
           <h3 className="mb-4 text-xl font-semibold text-gray-800">
-            Estamos esperando tu <strong>mensaje</strong>
+            ¡Estamos esperando tu <strong>mensaje</strong>!
           </h3>
 
           {/* Correos de cada departamento en una sola columna y centrados */}
