@@ -84,7 +84,7 @@ function Navbar() {
           {/* Botón Contacto */}
           <a
             href="#contacto"
-            className="bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300"
+            className="bg-brandBlue text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300"
           >
             Contacto
           </a>
@@ -145,16 +145,16 @@ function HomeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-4 text-4xl font-extrabold md:text-5xl text-indigo-600"
+          className="mb-4 text-5xl font-extrabold md:text-6xl text-brandBlue"
         >
-          Optimiza tu negocio con IA:<br /> Soluciones inteligentes para PYMEs
+          DEMOCRATIZANDO LA IA
         </motion.h2>
 
-        <p className="mx-auto mb-8 max-w-2xl text-gray-600">
-          Descubre cómo la IA puede hacer crecer tu empresa y simplificar tu gestión.
+        <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl text-gray-600">
+          Descubre cómo la IA puede hacer <strong>crecer</strong> tu empresa y <strong>simplificar</strong> tu gestión.
         </p>
         <a href="#contacto">
-          <Button className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500">
+          <Button className="rounded-2xl bg-brandBlue px-8 py-4 text-lg text-white shadow-lg hover:bg-indigo-500">
             Agenda una consulta gratuita
           </Button>
         </a>
@@ -176,7 +176,7 @@ function BenefitCard({ icon, title }) {
   return (
     <Card className="rounded-2xl shadow-md transition-all transform hover:scale-105 hover:shadow-xl">
       <CardContent className="flex flex-col items-center p-6 text-center">
-        <div className="mb-4 text-indigo-600">{icon}</div>
+        <div className="mb-4 text-brandBlue">{icon}</div>
         <h4 className="font-semibold text-gray-700">{title}</h4>
       </CardContent>
     </Card>
@@ -196,7 +196,7 @@ function AboutSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
           Sobre Nosotros
         </h2>
         <div
@@ -271,29 +271,29 @@ function ServicesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
           Soluciones y Servicios
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
           <ServiceCard
             title="Automatización de Procesos"
             description="Reduce las tareas repetitivas y optimiza la eficiencia operativa."
-            icon={<Cpu className="h-10 w-10 text-indigo-600" />}
+            icon={<Cpu className="h-10 w-10 text-brandBlue" />}
           />
           <ServiceCard
             title="IA para Atención al Cliente"
             description="Responde consultas en tiempo real y mejora la experiencia con un chatbot propio."
-            icon={<MessageSquare className="h-10 w-10 text-indigo-600" />}
+            icon={<MessageSquare className="h-10 w-10 text-brandBlue" />}
           />
           <ServiceCard
             title="Análisis de Datos y Predicciones"
             description="Procesa grandes volúmenes de datos y proporciona informes en tiempo real para una toma de decisiones más informada."
-            icon={<BarChart className="h-10 w-10 text-indigo-600" />}
+            icon={<BarChart className="h-10 w-10 text-brandBlue" />}
           />
           <ServiceCard
             title="Integración con Herramientas Actuales"
             description="Compatibilidad con CRM, ERP y sistemas contables, soluciones en la nube sin necesidad de hardware avanzado."
-            icon={<Users className="h-10 w-10 text-indigo-600" />}
+            icon={<Users className="h-10 w-10 text-brandBlue" />}
           />
         </div>
       </motion.div>
@@ -329,7 +329,7 @@ function ChatbotSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
           🤖 Tu asistente virtual 24/7 para potenciar tu negocio
         </h2>
         <p
@@ -446,7 +446,7 @@ function SuccessStoriesSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">Casos de Éxito</h2>
+        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">Casos de Éxito</h2>
         <div className="mx-auto mt-10 grid gap-6 md:grid-cols-4">
           {successStories.map((story, i) => (
             <SuccessStoryCard key={i} {...story} />
@@ -575,7 +575,7 @@ function ContactSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-indigo-600">
+        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
           Contacto / Solicita una Demo
         </h2>
         <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
@@ -632,7 +632,7 @@ function ContactSection() {
             <Button
               type="submit"
               disabled={isSending}
-              className="rounded-2xl bg-indigo-600 px-6 py-3 text-white shadow-lg hover:bg-indigo-500"
+              className="rounded-2xl bg-brandBlue px-6 py-3 text-white shadow-lg hover:bg-indigo-500"
             >
               {isSending ? "Enviando..." : "Enviar"}
             </Button>
@@ -690,7 +690,7 @@ function ContactSection() {
           <div className="mt-6 flex justify-center">
             <a
               href="https://www.linkedin.com/in/alejandro-picallo-galante-543557324/"
-              className="inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-400"
+              className="inline-flex items-center space-x-2 text-brandBlue hover:text-brandBlue/80"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -717,7 +717,7 @@ function ContactSection() {
 // ---------------------------------------
 function Footer() {
   return (
-    <footer className="bg-white py-4 text-center text-sm text-gray-600">
+    <footer className="bg-white py-4 text-center text-sm text-brandBlue">
       <p>© {new Date().getFullYear()} IA4PYMEs. Todos los derechos reservados.</p>
     </footer>
   );
