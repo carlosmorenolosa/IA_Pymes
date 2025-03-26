@@ -159,16 +159,18 @@ function HomeSection() {
         <p className="mx-auto mb-8 max-w-2xl text-base md:text-xl text-gray-600">
           Descubre cómo la IA puede hacer <strong>crecer</strong> tu empresa y <strong>simplificar</strong> tu gestión.
         </p>
-        <a href="#contacto">
-          <Button className="rounded-2xl bg-brandBlue px-8 py-4 text-lg text-white shadow-lg hover:bg-brandBlue/80">
-            Agenda una consulta gratuita
-          </Button>
-        </a>
         <div className="mt-12 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 md:grid-cols-4">
           <BenefitCard icon={<Cpu className="h-8 w-8" />} title="Automatización de procesos" />
           <BenefitCard icon={<BarChart className="h-8 w-8" />} title="Optimización de costos" />
           <BenefitCard icon={<Check className="h-8 w-8" />} title="Mejora en la toma de decisiones" />
           <BenefitCard icon={<MonitorSmartphone className="h-8 w-8" />} title="Integración sin complicaciones" />
+        </div>
+        <div className="mt-10">
+          <a href="#contacto">
+            <Button className="rounded-2xl bg-brandBlue px-8 py-4 text-lg text-white shadow-lg hover:bg-brandBlue/80">
+              Agenda una consulta gratuita
+            </Button>
+          </a>
         </div>
       </motion.div>
     </section>
@@ -541,15 +543,6 @@ function ContactSection() {
               className="rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                name="demo"
-                checked={formData.demo}
-                onChange={handleChange}
-              />
-              <span>Solicitar una demostración de IA</span>
-            </label>
             <Button
               type="submit"
               disabled={isSending}
