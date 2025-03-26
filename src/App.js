@@ -73,7 +73,7 @@ function Navbar() {
               <a
                 key={index}
                 href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-                className="relative text-gray-700 hover:text-indigo-500 transition-all duration-300
+                className="relative text-gray-700 hover:text-brandBlue/80 transition-all duration-300
                   after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px]
                   after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
               >
@@ -84,7 +84,7 @@ function Navbar() {
           {/* Botón Contacto */}
           <a
             href="#contacto"
-            className="bg-brandBlue text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300"
+            className="bg-brandBlue text-white px-4 py-2 rounded-lg shadow-md hover:bg-brandBlue/80 transition-all duration-300"
           >
             Contacto
           </a>
@@ -106,7 +106,7 @@ function Navbar() {
                   <a
                     key={index}
                     href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-                    className="block text-gray-700 hover:text-indigo-500 transition-all duration-300"
+                    className="block text-gray-700 hover:text-brandBlue/80 transition-all duration-300"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item}
@@ -154,7 +154,7 @@ function HomeSection() {
           Descubre cómo la IA puede hacer <strong>crecer</strong> tu empresa y <strong>simplificar</strong> tu gestión.
         </p>
         <a href="#contacto">
-          <Button className="rounded-2xl bg-brandBlue px-8 py-4 text-lg text-white shadow-lg hover:bg-indigo-500">
+          <Button className="rounded-2xl bg-brandBlue px-8 py-4 text-lg text-white shadow-lg hover:bg-brandBlue/80">
             Agenda una consulta gratuita
           </Button>
         </a>
@@ -632,7 +632,7 @@ function ContactSection() {
             <Button
               type="submit"
               disabled={isSending}
-              className="rounded-2xl bg-brandBlue px-6 py-3 text-white shadow-lg hover:bg-indigo-500"
+              className="rounded-2xl bg-brandBlue px-6 py-3 text-white shadow-lg hover:bg-brandBlue/80"
             >
               {isSending ? "Enviando..." : "Enviar"}
             </Button>
