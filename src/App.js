@@ -485,7 +485,7 @@ function ContactSection() {
         viewport={{ once: true }}
         className="container mx-auto max-w-5xl"
       >
-        <h2 className="mb-6 text-center text-3xl font-bold text-brandBlue">
+        <h2 className="mb-6 text-center text-4xl font-bold text-brandBlue">
           El momento es ahora. ¿Construimos juntos?
         </h2>
         <p className="mx-auto mb-6 max-w-3xl text-center text-gray-700">
